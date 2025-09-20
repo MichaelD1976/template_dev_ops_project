@@ -1,7 +1,85 @@
-# GitHub Codespaces ♥️ Jupyter Notebooks
+## Template DevOps Python Project
 
-Welcome to your shiny new codespace! We've got everything fired up and running for you to explore Python and Jupyter notebooks.
+This repository is a template Python project demonstrating a clean and maintainable project setup with basic DevOps and CI/CD practices. It includes a Python package, unit testing, automation via Makefile, a .gitignore to keep the repository clean, and a GitHub Actions CI workflow that automatically runs tests on push or pull request.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with what you're seeing right now - where you go from here is up to you!
+## Project Structure
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+The repository is organized as follows:
+
+template_dev_ops_project/           # Repository root
+├── template_dev_ops_project/       # Python package folder
+│   ├── __init__.py                # Marks this folder as a package
+│   └── main.py                     # Example functions
+├── tests/                          # Unit tests
+│   └── test_main.py                # Tests for main.py
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # GitHub Actions CI workflow
+├── requirements.txt                # List of dependencies
+├── Makefile                        # Automation commands: install/test
+├── .gitignore                       # Ignored files and folders
+└── README.md                        # This documentation
+
+## Python Package
+
+All Python code lives inside the template_dev_ops_project/ folder. The __init__.py file marks it as a Python package, and main.py contains example functions. This package structure ensures clean imports and allows the project to be installed or packaged in the future.
+
+## Tests
+
+Unit tests are stored in the tests/ folder using pytest. Each test file mirrors the corresponding source file (e.g., test_main.py tests main.py). Keeping tests separate from source code ensures maintainability and clarity.
+
+To run tests locally:
+
+make test
+
+## Makefile
+
+The Makefile automates common development tasks:
+
+make install – creates a virtual environment (if missing) and installs dependencies
+
+make test – runs unit tests inside the virtual environment
+
+Automation ensures consistent setup for all contributors and avoids repetitive commands.
+
+## Requirements
+
+Dependencies are listed in requirements.txt. Currently, only pytest is required for running tests. Additional packages (e.g., numpy, pandas) can be added here as the project grows.
+
+## GitHub Actions CI
+
+The workflow in .github/workflows/ci.yml enables continuous integration:
+
+Triggered on pushes or pull requests to the main branch
+
+Installs Python, installs dependencies, and runs all tests automatically
+
+This provides immediate feedback about test success or failure, ensuring code changes are validated and reliable.
+
+## Usage
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/template_dev_ops_project.git
+cd template_dev_ops_project
+
+
+## Install dependencies:
+
+make install
+
+
+## Run tests:
+
+make test
+
+
+Modify or add code in the package, add corresponding tests, and push changes. The CI workflow will automatically run the tests.
+
+## Notes
+
+.gitignore ensures virtual environments, Python caches, and editor settings are not committed.
+
+The Python package folder ensures proper import paths and allows for future packaging.
+
+This repository is intended as a reference template for small-to-medium Python projects with CI/CD.

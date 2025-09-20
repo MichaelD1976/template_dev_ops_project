@@ -1,0 +1,36 @@
+# GitHub Actions workflow for template_dev_ops_project
+# This runs automatically on push or pull requests to GitHub
+# It installs dependencies and runs tests.
+
+name: CI  # The name of this workflow
+
+# When to run the workflow
+on:
+  push:         # Run on every push
+    branches: [ main ]
+  pull_request: # Run on every pull request
+    branches: [ main ]
+
+jobs:
+  test:          # A single job called "test"
+    runs-on: ubuntu-latest  # Use a Linux machine provided by GitHub
+
+    steps:
+      # Step 1: checkout the repository
+      - uses: actions/checkout@v4
+        # This downloads your repo into the CI runner
+
+      # Step 2: set up Python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"  # Python version to use
+
+      # Step 3: install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: run tests using pytest
+      - name: Run tests
+        run: pytest -q

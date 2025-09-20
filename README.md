@@ -42,6 +42,9 @@ make test – runs unit tests inside the virtual environment
 
 Automation ensures consistent setup for all contributors and avoids repetitive commands.
 
+## Setup.py
+In small projects or when running scripts directly, a setup.py file is often not needed because Python can find files in the same folder. However, for structured projects and CI/CD workflows, setup.py (or pyproject.toml) is important: it tells Python that your project is an installable package, allows imports like from template_dev_ops_project import ... to work anywhere, and enables GitHub Actions to run tests in a clean environment. Installing the package locally with pip install -e . makes development easier by reflecting code changes immediately, and it also provides the metadata needed if you ever want to distribute the package.
+
 ## Requirements
 
 Dependencies are listed in requirements.txt. Currently, only pytest is required for running tests. Additional packages (e.g., numpy, pandas) can be added here as the project grows.

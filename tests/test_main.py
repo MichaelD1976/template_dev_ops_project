@@ -17,3 +17,8 @@ def test_subtract():
     """Test that subtract() correctly subtracts numbers."""
     from template_dev_ops_project.main import subtract
     assert subtract(5, 3) == 2
+
+def test_division():
+    """Test that subtract() correctly subtracts numbers."""
+    from template_dev_ops_project.main import division
+    assert division(6, 3) == 2

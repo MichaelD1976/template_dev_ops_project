@@ -17,7 +17,9 @@ template_dev_ops_project/           # Repository root
 ├── .github/
 │   └── workflows/
 │       └── ci.yml                  # GitHub Actions CI workflow
-├── requirements.txt                # List of dependencies
+├── requirements.txt               # List of dependencies
+|__ setup.py
+|              
 ├── Makefile                        # Automation commands: install/test
 ├── .gitignore                       # Ignored files and folders
 └── README.md                        # This documentation
@@ -88,3 +90,9 @@ Modify or add code in the package, add corresponding tests, and push changes. Th
 The Python package folder ensures proper import paths and allows for future packaging.
 
 This repository is intended as a reference template for small-to-medium Python projects with CI/CD.
+
+---
+
+This project serves as a reusable Python template for future projects. To start a new project, simply copy this repository, remove the old Git history, and update the project-specific information in README.md and setup.py or pyproject.toml. The folder structure, GitHub Actions workflow, Makefile, and test framework are all pre-configured, so you can immediately run tests, install the package locally with pip install -e ., and push changes to GitHub with CI/CD automatically verifying your code. This approach ensures consistency, maintainability, and a professional workflow across all your Python projects without having to redo setup each time.
+
+This template is configured to use SSH for Git operations, so when you clone it for a new project, you do not need to regenerate personal access tokens (PATs) for normal commits and pushes. As long as your SSH key is added to GitHub, all local pushes and pulls work seamlessly. A new PAT is only needed if you plan to perform automated pushes from GitHub Actions or use HTTPS authentication instead of SSH. This makes starting new projects from this template fast and secure without additional credential setup.

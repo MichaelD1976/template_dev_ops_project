@@ -12,3 +12,8 @@ def test_add():
 def test_multiply():
     # check if 2 * 3 = 6
     assert multiply(2, 3) == 6
+
+def test_subtract():
+    """Test that subtract() correctly subtracts numbers."""
+    from template_dev_ops_project.main import subtract
+    assert subtract(5, 3) == 2

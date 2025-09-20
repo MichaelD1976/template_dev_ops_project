@@ -1,4 +1,6 @@
-## Template DevOps Python Project
+# Template DevOps Python Project
+
+[![CI](https://github.com/MichaelD1976/template_dev_ops_project/actions/workflows/ci.yml/badge.svg)](https://github.com/MichaelD1976/template_dev_ops_project/actions/workflows/ci.yml)
 
 This repository is a template Python project demonstrating a clean and maintainable project setup with basic DevOps and CI/CD practices. It includes a Python package, unit testing, automation via Makefile, a .gitignore to keep the repository clean, and a GitHub Actions CI workflow that automatically runs tests on push or pull request.
 
